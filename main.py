@@ -27,13 +27,13 @@ def visualize_3d(volume, level=128):
 
     fig = plt.figure(figsize=(10, 10))
     ax = fig.add_subplot(111, projection='3d')
-    ax.plot_trisurf(verts[:, 0], verts[:,1], faces, verts[:, 2],
+    ax.plot_trisurf(verts[:, 0], verts[:, 1], faces, verts[:, 2],
                     linewidth=0.2, antialiased=True)
     plt.show()
 
 
 def main():
-    path = os.getcwd()+r"\res\FISH2222-10.tif"
+    path = os.getcwd() + r"\res\FISH2222-12-gs.tif"
 
     images = load_tiff_stack(path)
     preprocessed_images = [preprocess_image(img) for img in images]
@@ -46,6 +46,6 @@ def main():
     # 3D visualization
     visualize_3d(volume, level=30)
 
+
 if __name__ == "__main__":
     main()
-
