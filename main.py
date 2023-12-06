@@ -1,3 +1,5 @@
+import os
+
 import cv2
 from tifffile import imread
 import numpy as np
@@ -31,7 +33,7 @@ def visualize_3d(volume, level=128):
 
 
 def main():
-    path = "C:/Users/mmabo/Downloads/FISH2222-10.tif"
+    path = os.getcwd()+r"\res\FISH2222-10.tif"
 
     images = load_tiff_stack(path)
     preprocessed_images = [preprocess_image(img) for img in images]
